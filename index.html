@@ -30,33 +30,41 @@
 
     <div class="container">
       <div class="row mt-2">
-        <div class="col-6">
-          <!-- BUG: why are these in a column? -->
-          <div class="col-2" id="hours">Hours</div>
-          <div class="col-2" id="min">Min</div>
-          <div class="col-2" id="sec">Sec</div>
+        <div class="col">
+          <div class="row">
+            <div class="col-2 mr-1" id="hours">Hours</div>
+            <div class="col-2 mr-1" id="min">Min</div>
+            <div class="col-2" id="sec">Sec</div>
+          </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb-1">
         <div class="col">
           <form action="javascript:void(0);" id="form-1" class="">
             <div class="form-group form-row">
               <div class="input-group">
                 <div class="col-2">
+                  <!-- HOURS -->
                   <input type="number" step="1" min="0" id="hours-11" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
                 </div>
                 <div class="col-2">
+                  <!-- MINUTES -->
                   <input type="number" step="1" min="0" id="min-11" class="form-control text-right" placeholder="0" aria-labelledby="min" >
                 </div>
+                <div class="invalid-feedback" id="hr-min-feedback">Hours and Minutes must be positive integer values.</div>
                 <div class="col-2">
-                  <!-- BUG: why does it invalidate with decimal -->
+                  <!-- SECONDS -->
                   <input type="number" min="0" id="sec-11" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
                 </div>
+                <div class="invalid-feedback" id="sec-feedback">Seconds must be integer or decimal numbers</div>
+                <!-- ADD SUBTRACT BUTTONS -->
+                <div class="col-2"><button type="button" id = "addBtn-1" class="btn btn-primary">+ Add</button></div>
+                <div class="col-2"><button type="button" id = "subBtn-1" class="btn btn-danger">- Sub</button></div>
             </div>
           </div>
         </div>
       </div> <!-- end 1st row -->
-      <div class="row">
+      <div class="row mb-1">
         <div class="col">
           <form action="javascript:void(0);" id="form-2" class="was-validated">
             <div class="form-group form-row">
@@ -70,10 +78,12 @@
                 <div class="col-2">
                   <input type="number" min="0" id="sec-12" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required>
                 </div>
+                <div class="col-2"><button type="button" id = "addBtn-2" class="btn btn-primary">+ Add</button></div>
+                <div class="col-2"><button type="button" id = "subBtn-2" class="btn btn-danger">- Sub</button></div>
             </div>
           </div>
         </div>
-      </div> <!-- end 2st row -->
+      </div> <!-- end 2nd row -->
     </div> <!-- Close time container -->
 
     
