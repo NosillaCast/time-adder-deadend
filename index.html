@@ -14,29 +14,49 @@
     
     <div class="container mt-2">
       <div class="row">
-        <div class="col-2">
-          <button type="button" class="btn btn-primary">Add</button></div>
-        </div>
       </div>
+      <!-- TODO: JavaScript add a div with the result?  -->
     </div>
 
   <div class="container text-center">
-    <div class="row">
-        <div class="col-2" id="hours"><h1>Hours</h1></div>
-        <div class="col-2" id="minutes"><h1>Min</h1></div>
-        <div class="col-2" id="seconds"><h1>Sec</h1></div>
-    </div> <!-- end header row -->
-    <div class="row"> <!-- confirmed aria labels work -->
-      <div class="col-2 "><input type="text" id="hours-1" class="form-control text-right" placeholder="0000" aria-labelledby="hours"></div>
-      <div class="col-2 "><input type="text" id="min-1" class="form-control text-right" placeholder="00" aria-labelledby="minutes"></div>
-      <div class="col-2 "><input type="text" id="sec-1" class="form-control text-right" placeholder="00" aria-labelledby="seconds"></div>
-    </div> <!-- end row -->
+   
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Hours</th>
+          <th scope="col">Min</th>
+          <th scope="col">Sec</th>
+        </tr>
+      </thead>
+      <tr>
+        <td><input type="text" id="hours-1" class="form-control text-right" placeholder="0000" aria-labelledby="hours"></td>
+        <td><input type="text" id="min-1" class="form-control text-right" placeholder="0000" aria-labelledby="minutes"></td>
+        <td><input type="text" id="sec-1" class="form-control text-right" placeholder="0000.00" aria-labelledby="seconds"></td>
+        <td><button type="button" id = "addBtn-1" class="btn btn-primary">+ Add</button></td>
+        <td><button type="button" id = "subBtn-1" class="btn btn-danger">- Sub</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="hours-2" class="form-control text-right" placeholder="0000" aria-labelledby="hours"></td>
+        <td><input type="text" id="min-2" class="form-control text-right" placeholder="0000" aria-labelledby="minutes"></td>
+        <td><input type="text" id="sec-2" class="form-control text-right" placeholder="0000.00" aria-labelledby="seconds"></td>
+        <td><button type="button" id = "addBtn-2" class="btn btn-primary">+ Add</button></td>
+        <td><button type="button" id = "subBtn-2" class="btn btn-danger">- Sub</button></td>
+      </tr>
+    </table>
+
+
   </div> <!-- end container for time names -->
 
 
-  <!-- include jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <!-- Include Bootstrap JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- include jQuery, Popper & Bootstrap in this order -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Load Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- Load the local JS Code AFTER the other libraries -->
+   <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
