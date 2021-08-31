@@ -7,6 +7,18 @@
     <!-- include Bootstrap 4 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
+    <style>
+      /* removes spinner (up/down arrows) on input="number" */
+      input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+       -webkit-appearance: none;
+       appearance: none;
+       margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+      </style>
+
 
 		<title>A Web App to Add Time</title>
 	</head>
@@ -14,33 +26,60 @@
     
 
   <div class="container text-center">
-   
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Hours</th>
-          <th scope="col">Min</th>
-          <th scope="col">Sec</th>
-        </tr>
-      </thead>
-      <tr>
-        <td><input type="text" id="hours-1" class="form-control text-right" placeholder="0000" aria-labelledby="hours"></td>
-        <td><input type="text" id="min-1" class="form-control text-right" placeholder="0000" aria-labelledby="minutes"></td>
-        <td><input type="text" id="sec-1" class="form-control text-right" placeholder="0000.00" aria-labelledby="seconds"></td>
-        <td><button type="button" id = "addBtn-1" class="btn btn-primary">+ Add</button></td>
-        <td><button type="button" id = "subBtn-1" class="btn btn-danger">- Sub</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" id="hours-2" class="form-control text-right" placeholder="0000" aria-labelledby="hours"></td>
-        <td><input type="text" id="min-2" class="form-control text-right" placeholder="0000" aria-labelledby="minutes"></td>
-        <td><input type="text" id="sec-2" class="form-control text-right" placeholder="0000.00" aria-labelledby="seconds"></td>
-        <td><button type="button" id = "addBtn-2" class="btn btn-primary">+ Add</button></td>
-        <td><button type="button" id = "subBtn-2" class="btn btn-danger">- Sub</button></td>
-      </tr>
-    </table>
+    
+
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-6">
+          <!-- BUG: why are these in a column? -->
+          <div class="col-2" id="hours">Hours</div>
+          <div class="col-2" id="min">Min</div>
+          <div class="col-2" id="sec">Sec</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form action="javascript:void(0);" id="form-1" class="was-validated">
+            <div class="form-group form-row">
+              <div class="input-group">
+                <div class="col-2">
+                  <input type="number" step="1" min="0" id="hours-11" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
+                </div>
+                <div class="col-2">
+                  <input type="number" step="1" min="0" id="min-11" class="form-control text-right" placeholder="0" aria-labelledby="min" >
+                </div>
+                <div class="col-2">
+                  <!-- BUG: why does it invalidate with decimal -->
+                  <input type="number" min="0" id="sec-11" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end 1st row -->
+      <div class="row">
+        <div class="col">
+          <form action="javascript:void(0);" id="form-2" class="was-validated">
+            <div class="form-group form-row">
+              <div class="input-group">
+                <div class="col-2">
+                  <input type="number" step="1" min="0" id="hours-12" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
+                </div>
+                <div class="col-2">
+                  <input type="number" step="1" min="0" id="min-12" class="form-control text-right" placeholder="0" aria-labelledby="min" >
+                </div>
+                <div class="col-2">
+                  <input type="number" min="0" id="sec-12" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end 2st row -->
+    </div> <!-- Close time container -->
+
+    
     <div class="container">
       <div class="row">
-        <button type="button" class="pill">More Numbers Please</button>
+        <button type="button" class="pill mt-2">More Numbers Please</button>
       </div>
     </div>
 
@@ -49,7 +88,7 @@
         <div class="card">
           <div class="card-body">
             <h5>Total:</h5>
-            <h5 class="card-text">37:42.5</h5>
+            <h5 class="card-text" id={{total}}></h5>
           </div>
         </div>
       </div>
