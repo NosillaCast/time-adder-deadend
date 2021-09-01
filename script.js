@@ -23,7 +23,7 @@ $(function(){
 
   // add event handlers to activate the Bootstrap validation styles
  
-  const validateTimes = function(){
+  const validateHrsMin = function(){
     if($hours.is(':valid')){
       $hours.removeClass('is-invalid').addClass('is-valid');
     }else{
@@ -34,25 +34,31 @@ $(function(){
     }else{
       $min.removeClass('is-valid').addClass('is-invalid');
     }
+    if ($hours.is(':valid') && $min.is(':valid')){
+      $('#hr-min-feedback').hide();
+      return true;
+    }
+    $('#hr-min-feedback').show();
+    return false;
+  }
+  const validateSec = function(){
     if($sec.is(':valid')){
       $sec.removeClass('is-invalid').addClass('is-valid');
     }else{
       $sec.removeClass('is-valid').addClass('is-invalid');
     }
-    if ($hours.is(':valid') && $min.is(':valid')){
-      $('#hr-min-feedback').hide();
-      return true;
-    }
     if ($sec.is(':valid')){
       $('#sec-feedback').hide();
       return true;
     }
+    $('#sec-feedback').show();
+    return false;
   }
     
   // add input handler to the times
-  $hours.on('input', validateTimes);
-  $min.on('input',validateTimes);
-  $sec.on('input',validateTimes);
+  $hours.on('input', validateHrsMin);
+  $min.on('input',validateHrsMin);
+  $sec.on('input',validateSec);
 
   // add a submit handler to the form
   $form.submit(function(){
