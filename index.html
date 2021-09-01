@@ -45,61 +45,74 @@
               <div class="input-group">
                 <div class="col-2">
                   <!-- HOURS -->
-                  <input type="number" step="1" min="0" id="hours-11" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
+                  <input type="number" step="1" min="0" id="hours-1" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
                 </div>
                 <div class="col-2">
                   <!-- MINUTES -->
-                  <input type="number" step="1" min="0" id="min-11" class="form-control text-right" placeholder="0" aria-labelledby="min" >
+                  <input type="number" step="1" min="0" id="min-1" class="form-control text-right" placeholder="0" aria-labelledby="min" >
                 </div>
                 <div class="invalid-feedback" id="hr-min-feedback">Hours and Minutes must be positive integer values.</div>
                 <div class="col-2">
                   <!-- SECONDS -->
-                  <input type="number" min="0" id="sec-11" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
+                  <input type="number" min="0" step="any" id="sec-1" value="0.0"
+                 class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
                 </div>
                 <div class="invalid-feedback" id="sec-feedback">Seconds must be integer or decimal numbers</div>
                 <!-- ADD SUBTRACT BUTTONS -->
-                <div class="col-2"><button type="button" id = "addBtn-1" class="btn btn-primary">+ Add</button></div>
-                <div class="col-2"><button type="button" id = "subBtn-1" class="btn btn-danger">- Sub</button></div>
+                <div class="col-3">
+                  <button type="submit" id = "addBtn-1" class="btn btn-primary pl-1 pr-1">+ Add</button
+                    ><button type="submit" id = "subBtn-1" class="btn btn-danger">- Sub</button></div>
             </div>
           </div>
         </div>
       </div> <!-- end 1st row -->
-      <div class="row mb-1">
+       <div class="row mb-1">
         <div class="col">
-          <form action="javascript:void(0);" id="form-2" class="was-validated">
+          <form action="javascript:void(0);" id="form-2" class="">
             <div class="form-group form-row">
               <div class="input-group">
                 <div class="col-2">
-                  <input type="number" step="1" min="0" id="hours-12" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
+                  <!-- HOURS -->
+                  <input type="number" step="1" min="0" id="hours-2" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
                 </div>
                 <div class="col-2">
-                  <input type="number" step="1" min="0" id="min-12" class="form-control text-right" placeholder="0" aria-labelledby="min" >
+                  <!-- MINUTES -->
+                  <input type="number" step="1" min="0" id="min-2" class="form-control text-right" placeholder="0" aria-labelledby="min" >
                 </div>
+                <div class="invalid-feedback" id="hr-min-feedback">Hours and Minutes must be positive integer values.</div>
                 <div class="col-2">
-                  <input type="number" min="0" id="sec-12" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required>
+                  <!-- SECONDS -->
+                  <input type="number" min="0" step="any" id="sec-2" value="0.0"
+                 class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
                 </div>
-                <div class="col-2"><button type="button" id = "addBtn-2" class="btn btn-primary">+ Add</button></div>
-                <div class="col-2"><button type="button" id = "subBtn-2" class="btn btn-danger">- Sub</button></div>
+                <div class="invalid-feedback" id="sec-feedback">Seconds must be integer or decimal numbers</div>
+                <!-- ADD SUBTRACT BUTTONS -->
+                <div class="col-3">
+                  <button type="submit" id = "addBtn-2" class="btn btn-primary pl-1 pr-1">+ Add</button
+                    ><button type="submit" id = "subBtn-2" class="btn btn-danger">- Sub</button></div>
             </div>
           </div>
         </div>
-      </div> <!-- end 2nd row -->
+      </div> <!-- end 2st row -->
     </div> <!-- Close time container -->
 
     
     <div class="container">
       <div class="row">
-        <button type="button" class="pill mt-2">More Numbers Please</button>
+        <div class="col-6">
+        <button type="button" class="btn btn-link mt-2">Add More Times</button>
+        </div>
       </div>
     </div>
 
-    <div class="container mt-2">
+    <div class="container mt-2 ">
       <div class="row">
-        <div class="card">
-          <div class="card-body">
+        <div class="col-6">
+          <div class="col-3">
             <h5>Total:</h5>
-            <h5 class="card-text" id={{total}}></h5>
           </div>
+          <div class="col--3">
+            <h5 id={{total}}></h5></div>
         </div>
       </div>
     </div>
