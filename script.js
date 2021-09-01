@@ -20,6 +20,8 @@ $(function(){
   const $hours  = $('#hours-1');
   const $min = $('#min-1');
   const $sec = $('#sec-1');
+  const $btn1 = $('#addBtn-1');
+  const $btn2 = $('#subBtn-1');
 
   // add event handlers to activate the Bootstrap validation styles
  
@@ -60,8 +62,15 @@ $(function(){
   $min.on('input',validateHrsMin);
   $sec.on('input',validateSec);
 
-  // add a submit handler to the form
-  $form.submit(function(){
-  window.alert("Your donation was not submitted because this is a dummy form, but thanks all the same, it's the thought that counts :)");
+  // click handlers for add/subtract/moreTime buttons
+  $btn1.click(function(){
+    window.alert(`You clicked add`);
   });
+  $btn2.click(function(){
+    window.alert(`You clicked subtract`);
+  });
+  $('#moreTimes').click(function(){
+    window.alert(`You asked for more times`)
+  })
+
 }); // End document ready handler
