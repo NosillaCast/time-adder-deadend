@@ -35,10 +35,10 @@ $(function(){
       $min.removeClass('is-valid').addClass('is-invalid');
     }
     if ($hours.is(':valid') && $min.is(':valid')){
-      $('#hr-min-feedback').hide();
+      $('#hr-min-feedback-1').hide();
       return true;
     }
-    $('#hr-min-feedback').show();
+    $('#hr-min-feedback-1').show();
     return false;
   }
   const validateSec = function(){
@@ -48,10 +48,10 @@ $(function(){
       $sec.removeClass('is-valid').addClass('is-invalid');
     }
     if ($sec.is(':valid')){
-      $('#sec-feedback').hide();
+      $('#sec-feedback-1').hide();
       return true;
     }
-    $('#sec-feedback').show();
+    $('#sec-feedback-1').show();
     return false;
   }
     
