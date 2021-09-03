@@ -17,6 +17,11 @@
       input[type=number] {
         -moz-appearance: textfield;
       }
+      /* Align placeholder input text to right */
+      input[type="number"]::placeholder {
+        text-align: right;
+      }
+
       </style>
 
 
@@ -30,15 +35,14 @@
     <div class="row mt-2">
       <div class="col">
         <div class="row">
-          <div class="col-2 mr-1" id="hours">Hours</div>
-          <div class="col-2 mr-1" id="min">Min</div>
+          <div class="col-2" id="hours">Hours</div>
+          <div class="col-2" id="min">Min</div>
           <div class="col-2" id="sec">Sec</div>
         </div>
-        <div class="col-3"></div>
       </div>
     </div>
     
-    <div class="row "> <!-- 1st row of inputs and buttons-->
+    <div class="row"> <!-- 1st row of inputs and buttons-->
       <div class="col">
         <form action="javascript:void(0);" id="form-1" class="">
         <fieldset role="form" aria-labelledby="support_fm_desc" class="mb-2">         
@@ -48,16 +52,16 @@
                 <!-- HOURS -->
                 <input type="number" step="1" min="0" id="hours-1" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
               </div>
-              <div class="col-2">
+              <div class="col-2 ">
                 <!-- MINUTES -->
                 <input type="number" step="1" min="0" id="min-1" class="form-control text-right" placeholder="0" aria-labelledby="min" >
               </div>
-              <div class="col-2">
+              <div class="col-2 boder">
                 <!-- SECONDS -->
                 <input type="number" min="0.0" step="any" id="sec-1" class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
               </div>
               <!-- ADD & SUBTRACT BUTTONS -->
-              <div class="col-3">
+              <div class="col col-md-3"><!-- without col-md-3 buttons are above/below each other on mobile -->
                 <button type="submit" id = "addBtn-1" class="btn btn-primary pl-1 pr-1">+ Add</button>
                   <button type="submit" id = "subBtn-1" class="btn btn-danger">- Sub</button>
               </div>
@@ -97,7 +101,7 @@
                 class="form-control text-right" placeholder="0.0" aria-labelledby="sec" required >
               </div>
               <!-- ADD & SUBTRACT BUTTONS -->
-              <div class="col-3">
+              <div class="col col-md-3">
                 <button type="submit" id = "addBtn-2" class="btn btn-primary pl-1 pr-1">+ Add</button>
                   <button type="submit" id = "subBtn-2" class="btn btn-danger">- Sub</button>
               </div>
