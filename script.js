@@ -5,7 +5,7 @@
 
 // Document ready handler
 $(function(){
-
+  
 
   let timeInputArray = new Array();
   
@@ -74,5 +74,19 @@ $(function(){
     })
 
   } // end of for loop
+
+  class MyClass{
+    // define the constructor — the name is not optional
+    constructor(){
+      // define and initialise the data attributes here
+    }
+    // define the instance functions — you choose the names
+    nameOfAFunction(){
+      
+    }
+    nameOfAnotherFunction(){
+      
+    }
+  }
 
 }); // End document ready handler
