@@ -1,22 +1,74 @@
-
+// 
+// Define globally-scoped variables
+//
   
-  
-
+// Create an array holding the div IDs for two rows of times + buttons
+let timeInputArray = [
+  {
+    hours: "hours-0",
+    min: "min-0",
+    sec: "sec-0",
+    btnA: "addBtn-0",
+    btnS: "subBtn-0",
+  },
+  {
+    hours: "hours-1",
+    min: "min-1",
+    sec: "sec-1",
+    btnA: "addBtn-1",
+    btnS: "subBtn-1",
+  },
+]
 
 // Document ready handler
-$(function(){
+$(function () {
   
+  /********************************************* 
+  * A class to create the time input rows
+  **********************************************
+  *
+  * @param {integer} hours - the hours input
+  * @param {integer} min - the minutes input
+  * @param {decimal} sec - the seconds input
+  * @param {button} btnA - adds all of the values in the row to the total
+  * @param {button} btnS - subtracts all of the values in the row from the total
+  * 
+  * Instance functions:
+  * 
+  * Errors thrown e.g. @throws {RangeError} and why
+  * Errors thrown e.g. @throws {TypeError} and why
+  * 
+  */
 
-  let timeInputArray = new Array();
-  
-  // get a reference to the form for quick access
-  for (i=1; i<=2; i++) {
-    const $form = $('#form-i');
-    const $hours = $('#hours-i');
-    const $min = $('#min-i');
-    const $sec = $('#sec-i');
-    const $btnA = $('#addBtn-i');
-    const $btnS = $('#subBtn-i');
+  class timeInputRow {
+
+  // define the constructor 
+    constructor(details) {
+      this.hours = details.hours;
+      this.minutes = details.minutes;
+      this.seconds = details.seconds;
+      this.addBtn = details.addBtn;
+      this.subtBtn = details.subtBtn;
+    };
+ 
+    // Define instance functions
+    putTimesUp(){
+      let rowTemplate = $('#timeInputRow').html();
+      // render the html for the row
+      $(this.timeRowPlaceholder).append(Mustache.render(rowTemplate, this));
+    };
+  };
+  // Finished class definition
+
+  // Create a function to make the first two time input rows
+  function makeTimeInputRows(){
+    for (i = 0; i < timeInputArray.length; i++){
+      let x = new timeInputRow(timeInputArray[i]);
+      // arrayOfTimes.push(x); // do I need this? Haven't created it yet
+      x.putTimesUp();
+    };
+  };
+  makeTimeInputRows();
 
     // add event handlers to activate the Bootstrap validation styles
     const validateHrsMin = function(){
@@ -60,7 +112,10 @@ $(function(){
     // click handlers for add/subtract/moreTime buttons
     $btnA.click(function(){
       window.alert($hours.val())
-      timeInputArray[0] = new Array ($hours.val(), $min.val(), $sec.val());
+      for (i=1; i<=2; i++) {
+      timeInputArray[i] = new Array ($('#hours-i').val(), $('#min-i').val(), $('#sec-i').val());
+      console.log(`DEBUG: timeInputArray[i] is ${timeInputArray[i]}`)
+      }
       console.log(timeInputArray);
 
 
@@ -73,20 +128,8 @@ $(function(){
       window.alert(`You asked for more times`)
     })
 
-  } // end of for loop
+  
 
-  class MyClass{
-    // define the constructor — the name is not optional
-    constructor(){
-      // define and initialise the data attributes here
-    }
-    // define the instance functions — you choose the names
-    nameOfAFunction(){
-      
-    }
-    nameOfAnotherFunction(){
-      
-    }
-  }
+ 
 
 }); // End document ready handler
