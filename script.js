@@ -60,6 +60,17 @@ $(function () {
   };
   // Finished class definition
 
+  // testing
+  function testTimes(){
+    for (let i = 0; i < timeInputArray.length; i++){
+      let x = new timeInputRow(timeInputArray[i]);
+      console.log(x);
+    }
+  }
+  testTimes();
+
+  
+
   // Create a function to make the first two time input rows
   function makeTimeInputRows(){
     for (i = 0; i < timeInputArray.length; i++){
