@@ -16,7 +16,7 @@ let timeInputArray = [
     min: "min-1",
     sec: "sec-1",
     addBtn: "addBtn-1",
-    subtBtn: "subBtn-1"
+    subBtn: "subBtn-1"
   }
 ]
 
@@ -48,7 +48,7 @@ $(function () {
       this.min = details.min;
       this.sec = details.sec;
       this.addBtn = details.addBtn;
-      this.subtBtn = details.subtBtn;
+      this.subBtn = details.subBtn;
     };
  
     // Define instance functions
@@ -69,6 +69,8 @@ $(function () {
     };
   };
   makeTimeInputRows();
+
+
     // SQUIRREL: ALL validation needs to be fixed for new variables, loops, etc.
     // add event handlers to activate the Bootstrap validation styles
     // const validateHrsMin = function(){
