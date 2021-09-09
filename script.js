@@ -5,6 +5,7 @@
 // Create an array holding the div IDs for two rows of times + buttons
 let timeInputArray = [
   {
+    formRow: "formRow",
     hours: "hours-0",
     min: "min-0",
     sec: "sec-0",
@@ -12,6 +13,7 @@ let timeInputArray = [
     subBtn: "subBtn-0"
   },
   {
+    form: "form",
     hours: "hours-1",
     min: "min-1",
     sec: "sec-1",
@@ -44,18 +46,23 @@ $(function () {
 
   // define the constructor 
     constructor(details) {
+      // define the instance variables - divs for the 3 time inputs and 2 buttons
+      this.formRow = details.formRow;
       this.hours = details.hours;
       this.min = details.min;
       this.sec = details.sec;
       this.addBtn = details.addBtn;
       this.subBtn = details.subBtn;
+      // call the instance function to render the row
+      this.putInputTimeRowUp();
     };
  
     // Define instance functions
-    putTimesUp(){
+    putInputTimeRowUp(){
+      // timeInputRow is the id of the script
       let rowTemplate = $('#timeInputRow').html();
       // render the html for the row
-      $(this.timeRowPlaceholder).append(Mustache.render(rowTemplate, this));
+      $(this.formRow).append(Mustache.render(rowTemplate, this));
     };
   };
   // Finished class definition
@@ -64,19 +71,19 @@ $(function () {
   function testTimes(){
     for (let i = 0; i < timeInputArray.length; i++){
       let x = new timeInputRow(timeInputArray[i]);
+      // returns the object which is the timeInputRow:
       console.log(x);
     }
   }
   testTimes();
 
-  
-
   // Create a function to make the first two time input rows
   function makeTimeInputRows(){
     for (i = 0; i < timeInputArray.length; i++){
       let x = new timeInputRow(timeInputArray[i]);
+      console.log(`poop ${i}`);
       // arrayOfTimes.push(x); // do I need this? Haven't created it yet
-      x.putTimesUp();
+      // this.putInputTimeRowUp();
     };
   };
   makeTimeInputRows();
