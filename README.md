@@ -1,6 +1,6 @@
 # The Problem to be Solved
 
-I write blog posts which I then read out loud for my podcast. Ulysses tells me how long it will take me to read each post. I want to be able to add the times up for the blog psots I've written to see if my show will be the right length. I don't want it too short, and if I have too much content I want to move it to the next week.
+I write blog posts which I then read out loud for my podcast. Ulysses tells me how long it will take me to read each post. I want to be able to add the times up for the blog posts I've written to see if my show will be the right length. I don't want it too short, and if I have too much content I want to move it to the next week.
 
 Oddly Excel and other spreadsheets I've tried have not been able to do this. They see time as a time of day, not elapsed time.  It's tedious to do by hand, carrying over additions >60 seconds to the minutes, etc.
 
