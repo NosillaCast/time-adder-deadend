@@ -1,30 +1,31 @@
-// 
+/* eslint-env jquery */
+
+//
 // Define globally-scoped variables
 //
-  
+
 // Create an array holding the div IDs for two rows of times + buttons
 let timeInputArray = [
   {
-    formRow: "formRow",
-    hours: "hours-0",
-    min: "min-0",
-    sec: "sec-0",
-    addBtn: "addBtn-0",
-    subBtn: "subBtn-0"
+    formRow: 'formRow',
+    hours: 'hours-0',
+    min: 'min-0',
+    sec: 'sec-0',
+    addBtn: 'addBtn-0',
+    subBtn: 'subBtn-0'
   },
   {
-    form: "form",
-    hours: "hours-1",
-    min: "min-1",
-    sec: "sec-1",
-    addBtn: "addBtn-1",
-    subBtn: "subBtn-1"
+    form: 'form',
+    hours: 'hours-1',
+    min: 'min-1',
+    sec: 'sec-1',
+    addBtn: 'addBtn-1',
+    subBtn: 'subBtn-1'
   }
-]
+];
 
 // Document ready handler
 $(function () {
-  
   /********************************************* 
   * A class to create the time input rows
   **********************************************
@@ -56,28 +57,27 @@ $(function () {
       // call the instance function to render the row
       this.putInputTimeRowUp();
     };
- 
+
     // Define instance functions
-    putInputTimeRowUp(){
+    putInputTimeRowUp () {
       // timeInputRow is the id of the script
       let rowTemplate = $('#timeInputRow').html();
       // render the html for the row
       $(this.formRow).append(Mustache.render(rowTemplate, this));
     };
-    
   };
   // Finished class definition
 
   // testing code for Mustache
   const theView = {
     poop: 'it actually works'
-  }  
-  $('#poopTplPlaceholder').html(Mustache.render($('#testTpl').html(),theView))
- 
+  };
+  $('#poopTplPlaceholder').html(Mustache.render($('#testTpl').html(), theView));
+
   // testing
-  function testTimes(){
-    for (let i = 0; i < timeInputArray.length; i++){
-      let x = new timeInputRow(timeInputArray[i]);
+  function testTimes () {
+    for (let i = 0; i < timeInputArray.length; i++) {
+      let x = new TimeInputRow(timeInputArray[i]);
       // returns the object which is the timeInputRow:
       console.log(x);
     }
