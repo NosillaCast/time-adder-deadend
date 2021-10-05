@@ -64,9 +64,16 @@ $(function () {
       // render the html for the row
       $(this.formRow).append(Mustache.render(rowTemplate, this));
     };
+    
   };
   // Finished class definition
 
+  // testing code for Mustache
+  const theView = {
+    poop: 'it actually works'
+  }  
+  $('#poopTplPlaceholder').html(Mustache.render($('#testTpl').html(),theView))
+ 
   // testing
   function testTimes(){
     for (let i = 0; i < timeInputArray.length; i++){

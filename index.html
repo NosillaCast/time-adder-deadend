@@ -110,7 +110,8 @@
               <div class="input-group">
                 <div class="col-2">
                   <!-- HOURS -->
-                  <input type="number" step="1" min="0" id="{{hours}}" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
+                  
+                    <input type="number" step="1" min="0" id="{{hours}}" class="form-control text-right" placeholder="0" aria-labelledby="hours" >
                 </div>
                 <div class="col-2 ">
                   <!-- MINUTES -->
@@ -124,7 +125,7 @@
                 <div class="col col-md-3"><!-- without col-md-3 buttons are above/below each other on mobile -->
                   <button type="submit" id = "{{addBtn}}" class="btn btn-primary pl-1 pr-1">+ Add</button>
                   <button type="submit" id = "{{subBtn}}" class="btn btn-danger">- Sub</button>
-                </div>
+                  </div>
               </div> <!-- end input-group -->
             </div> <!-- end form-group -->
             <!-- div for error message -->
@@ -145,6 +146,13 @@
           <h5 id={{total}}></h5></div>
       </div>
     </div>
+
+    <!-- this is fake code for testing -->
+    <div id="poopTplPlaceholder"></div>
+    <script type="text/html" id="testTpl">
+      <p> Please write the words it actually works here:  {{poop}}</p>
+      </script>
+
   
     <!-- include jQuery, Popper & Bootstrap in this order -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
