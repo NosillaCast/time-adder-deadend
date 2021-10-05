@@ -1,4 +1,5 @@
 /* eslint-env jquery */
+/* eslint-env Mustache */
 
 //
 // Define globally-scoped variables
@@ -71,6 +72,7 @@ $(function () {
   const theView = {
     poop: 'it actually works'
   };
+
   $('#poopTplPlaceholder').html(Mustache.render($('#testTpl').html(), theView));
 
   // testing
@@ -128,7 +130,7 @@ $(function () {
   //   $('#sec-feedback-i').show();
   //   return false;
   // }
-      
+
   // add input handler to the times to run validation
   // $hours.on('input', validateHrsMin);
   // $min.on('input',validateHrsMin);
@@ -149,5 +151,4 @@ $(function () {
   // $('#moreTimes').click(function(){
   //   window.alert(`You asked for more times`)
   // });
-
 }); // End document ready handler
