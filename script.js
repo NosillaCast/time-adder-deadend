@@ -1,5 +1,5 @@
 /* eslint-env jquery */
-/* eslint-env Mustache */
+/* global Mustache */
 
 //
 // Define globally-scoped variables
@@ -27,21 +27,21 @@ let timeInputArray = [
 
 // Document ready handler
 $(function () {
-  /********************************************* 
-  * A class to create the time input rows
-  **********************************************
-  *
+  /*********************************************/
+  /* A class to create the time input rows     */
+  /*********************************************/
+  /*
   * @param {integer} hours - the hours input
   * @param {integer} min - the minutes input
   * @param {decimal} sec - the seconds input
   * @param {button} addBtn - adds all of the values in the row to the total
   * @param {button} subBtn - subtracts all of the values in the row from the total
-  * 
+  *
   * Instance functions:
-  * 
+  *
   * Errors thrown e.g. @throws {RangeError} and why
   * Errors thrown e.g. @throws {TypeError} and why
-  * 
+  *
   */
 
   class TimeInputRow {
@@ -88,7 +88,7 @@ $(function () {
   // Create a function to make the first two time input rows
   function makeTimeInputRows () {
     for (let i = 0; i < timeInputArray.length; i++) {
-      let x = new timeInputRow(timeInputArray[i]);
+      let x = new TimeInputRow(timeInputArray[i]);
       console.log(`poop ${i}`);
       // arrayOfTimes.push(x); // do I need this? Haven't created it yet
       // this.putInputTimeRowUp();
