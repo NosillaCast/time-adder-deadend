@@ -43,10 +43,9 @@ $(function () {
   * 
   */
 
-  class timeInputRow {
-
-  // define the constructor 
-    constructor(details) {
+  class TimeInputRow {
+  // define the constructor
+    constructor (details) {
       // define the instance variables - divs for the 3 time inputs and 2 buttons
       this.formRow = details.formRow;
       this.hours = details.hours;
@@ -61,7 +60,7 @@ $(function () {
     // Define instance functions
     putInputTimeRowUp () {
       // timeInputRow is the id of the script
-      let rowTemplate = $('#timeInputRow').html();
+      const rowTemplate = $('#timeInputRow').html();
       // render the html for the row
       $(this.formRow).append(Mustache.render(rowTemplate, this));
     };
@@ -85,8 +84,8 @@ $(function () {
   testTimes();
 
   // Create a function to make the first two time input rows
-  function makeTimeInputRows(){
-    for (i = 0; i < timeInputArray.length; i++){
+  function makeTimeInputRows () {
+    for (let i = 0; i < timeInputArray.length; i++) {
       let x = new timeInputRow(timeInputArray[i]);
       console.log(`poop ${i}`);
       // arrayOfTimes.push(x); // do I need this? Haven't created it yet
@@ -95,61 +94,60 @@ $(function () {
   };
   makeTimeInputRows();
 
-
-    // SQUIRREL: ALL validation needs to be fixed for new variables, loops, etc.
-    // add event handlers to activate the Bootstrap validation styles
-    // const validateHrsMin = function(){
-    //   if($hours.is(':valid')){
-    //     $hours.removeClass('is-invalid').addClass('is-valid');
-    //     window.alert("Hours is valid");
-    //   }else{
-    //     $hours.removeClass('is-valid').addClass('is-invalid');
-    //   }
-    //   if($min.is(':valid')){
-    //     $min.removeClass('is-invalid').addClass('is-valid');
-    //   }else{
-    //     $min.removeClass('is-valid').addClass('is-invalid');
-    //   }
-    //   if ($hours.is(':valid') && $min.is(':valid')){
-    //     $('#hr-min-feedback-i').hide();
-    //     return true;
-    //   }
-    //   $('#hr-min-feedback-i').show();
-    //   return false;
-    // }
-    // const validateSec = function(){
-    //   if($sec.is(':valid')){
-    //     $sec.removeClass('is-invalid').addClass('is-valid');
-    //   }else{
-    //     $sec.removeClass('is-valid').addClass('is-invalid');
-    //   }
-    //   if ($sec.is(':valid')){
-    //     $('#sec-feedback-i').hide();
-    //     return true;
-    //   }
-    //   $('#sec-feedback-i').show();
-    //   return false;
-    // }
+  // SQUIRREL: ALL validation needs to be fixed for new variables, loops, etc.
+  // add event handlers to activate the Bootstrap validation styles
+  // const validateHrsMin = function(){
+  //   if($hours.is(':valid')){
+  //     $hours.removeClass('is-invalid').addClass('is-valid');
+  //     window.alert("Hours is valid");
+  //   }else{
+  //     $hours.removeClass('is-valid').addClass('is-invalid');
+  //   }
+  //   if($min.is(':valid')){
+  //     $min.removeClass('is-invalid').addClass('is-valid');
+  //   }else{
+  //     $min.removeClass('is-valid').addClass('is-invalid');
+  //   }
+  //   if ($hours.is(':valid') && $min.is(':valid')){
+  //     $('#hr-min-feedback-i').hide();
+  //     return true;
+  //   }
+  //   $('#hr-min-feedback-i').show();
+  //   return false;
+  // }
+  // const validateSec = function(){
+  //   if($sec.is(':valid')){
+  //     $sec.removeClass('is-invalid').addClass('is-valid');
+  //   }else{
+  //     $sec.removeClass('is-valid').addClass('is-invalid');
+  //   }
+  //   if ($sec.is(':valid')){
+  //     $('#sec-feedback-i').hide();
+  //     return true;
+  //   }
+  //   $('#sec-feedback-i').show();
+  //   return false;
+  // }
       
-    // add input handler to the times to run validation
-    // $hours.on('input', validateHrsMin);
-    // $min.on('input',validateHrsMin);
-    // $sec.on('input',validateSec);
+  // add input handler to the times to run validation
+  // $hours.on('input', validateHrsMin);
+  // $min.on('input',validateHrsMin);
+  // $sec.on('input',validateSec);
 
-    // click handlers for add/subtract/moreTime buttons
-    // $btnA.click(function(){
-    //   window.alert($hours.val())
-    //   for (i=1; i<=2; i++) {
-    //   timeInputArray[i] = new Array ($('#hours-i').val(), $('#min-i').val(), $('#sec-i').val());
-    //   console.log(`DEBUG: timeInputArray[i] is ${timeInputArray[i]}`)
-    //   }
-    //   console.log(timeInputArray);
-    // });
-    // $btnS.click(function(){
-    //   window.alert(`You clicked subtract`);
-    // });
-    // $('#moreTimes').click(function(){
-    //   window.alert(`You asked for more times`)
-    // });
+  // click handlers for add/subtract/moreTime buttons
+  // $btnA.click(function(){
+  //   window.alert($hours.val())
+  //   for (i=1; i<=2; i++) {
+  //   timeInputArray[i] = new Array ($('#hours-i').val(), $('#min-i').val(), $('#sec-i').val());
+  //   console.log(`DEBUG: timeInputArray[i] is ${timeInputArray[i]}`)
+  //   }
+  //   console.log(timeInputArray);
+  // });
+  // $btnS.click(function(){
+  //   window.alert(`You clicked subtract`);
+  // });
+  // $('#moreTimes').click(function(){
+  //   window.alert(`You asked for more times`)
+  // });
 
 }); // End document ready handler
