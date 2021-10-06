@@ -14,5 +14,8 @@
     },
     "rules": {
         "semi": [2, "always"]
-    }
+    },
+    "init-declarations": ["error", "never", 
+            { "ignoreForLoopInit": true }
+        ]
 }
