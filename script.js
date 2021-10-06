@@ -13,7 +13,7 @@ const timeInputArray = [
     min: 'min-0',
     sec: 'sec-0',
     addBtn: 'addBtn-0',
-    subBtn: 'subBtn-0'
+    subBtn: 'subBtn-0',
   },
   {
     formRow: 'formRow',
@@ -21,18 +21,18 @@ const timeInputArray = [
     min: 'min-1',
     sec: 'sec-1',
     addBtn: 'addBtn-1',
-    subBtn: 'subBtn-1'
-  }
+    subBtn: 'subBtn-1',
+  },
 ];
 
 // Create an array to hold the input times from the user
 const arrayOfTimes = [];
 
 // Document ready handler
-$(function () {
-  /*********************************************/
+$(() => {
+  /** ****************************************** */
   /* A class to create the time input rows     */
-  /*********************************************/
+  /** ****************************************** */
   /*
   * @param {integer} hours - the hours input
   * @param {integer} min - the minutes input
@@ -49,9 +49,9 @@ $(function () {
 
   class TimeInputRow {
   // define the constructor
-    constructor (details) {
+    constructor(details) {
       // define the instance variables - divs for the 3 time inputs and 2 buttons
-      this.formRow = details.formRow
+      this.formRow = details.formRow;
       this.hours = details.hours;
       this.min = details.min;
       this.sec = details.sec;
@@ -59,27 +59,27 @@ $(function () {
       this.subBtn = details.subBtn;
       // call the instance function to render the row
       this.putInputTimeRowUp();
-    };
+    }
 
     // Define instance functions
-    putInputTimeRowUp () {
+    putInputTimeRowUp() {
       // timeInputRow is the id of the script
       const rowTemplate = $('#timeInputRow').html();
       // render the html for the row
       $(this.formRow).append(Mustache.render(rowTemplate, this));
-    };
-  };
+    }
+  }
   // Finished class definition
 
   // testing code for Mustache
   const theView = {
-    poop: 'it actually works'
+    poop: 'it actually works',
   };
 
   $('#poopTplPlaceholder').html(Mustache.render($('#testTpl').html(), theView));
 
   // testing
-  function testTimes () {
+  function testTimes() {
     for (i = 0; i < timeInputArray.length; i++) {
       const x = new TimeInputRow(timeInputArray[i]);
       // returns the object which is the timeInputRow:
@@ -89,14 +89,14 @@ $(function () {
   testTimes();
 
   // Create a function to make the first two time input rows
-  function makeTimeInputRows () {
-    for (i = 0; i < timeInputArray.length; i++) {
+  function makeTimeInputRows() {
+    for (let i = 0; i < timeInputArray.length; i++) {
       const x = new TimeInputRow(timeInputArray[i]);
       console.log(`poop ${i}`);
       arrayOfTimes.push(x); // do I need this? Haven't created it yet
       this.putInputTimeRowUp();
-    };
-  };
+    }
+  }
   makeTimeInputRows();
 
   // SQUIRREL: ALL validation needs to be fixed for new variables, loops, etc.
