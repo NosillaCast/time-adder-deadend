@@ -16,7 +16,7 @@ let timeInputArray = [
     subBtn: 'subBtn-0'
   },
   {
-    form: 'form',
+    formRow: 'formRow',
     hours: 'hours-1',
     min: 'min-1',
     sec: 'sec-1',
