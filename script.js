@@ -25,6 +25,9 @@ const timeInputArray = [
   }
 ];
 
+// Create an array to hold the input times from the user
+const arrayOfTimes = [];
+
 // Document ready handler
 $(function () {
   /*********************************************/
