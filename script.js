@@ -6,7 +6,7 @@
 //
 
 // Create an array holding the div IDs for two rows of times + buttons
-let timeInputArray = [
+const timeInputArray = [
   {
     formRow: 'formRow',
     hours: 'hours-0',
