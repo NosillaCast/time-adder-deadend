@@ -80,8 +80,8 @@ $(function () {
 
   // testing
   function testTimes () {
-    for (let i = 0; i < timeInputArray.length; i++) {
-      let x = new TimeInputRow(timeInputArray[i]);
+    for (i = 0; i < timeInputArray.length; i++) {
+      const x = new TimeInputRow(timeInputArray[i]);
       // returns the object which is the timeInputRow:
       console.log(x);
     }
@@ -90,11 +90,11 @@ $(function () {
 
   // Create a function to make the first two time input rows
   function makeTimeInputRows () {
-    for (let i = 0; i < timeInputArray.length; i++) {
-      let x = new TimeInputRow(timeInputArray[i]);
+    for (i = 0; i < timeInputArray.length; i++) {
+      const x = new TimeInputRow(timeInputArray[i]);
       console.log(`poop ${i}`);
-      // arrayOfTimes.push(x); // do I need this? Haven't created it yet
-      // this.putInputTimeRowUp();
+      arrayOfTimes.push(x); // do I need this? Haven't created it yet
+      this.putInputTimeRowUp();
     };
   };
   makeTimeInputRows();
