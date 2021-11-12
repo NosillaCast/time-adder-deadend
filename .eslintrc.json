@@ -13,13 +13,20 @@
         "sourceType": "module"
     },
     "rules": {
-        "semi": [2, "always"],   
-        "init-declarations": ["error", "never", 
-                { "ignoreForLoopInit": true }
-            ],
-        "prefer-arrow-callback": [ "error", {
-             "allowNamedFunctions": true } 
-            ],
-        "allowForLoopAfterthoughts": true
+        "semi": [
+            2,
+            "always"
+        ],
+        "init-declarations": [
+            "error",
+            "never"
+        ],
+        "ignoreForLoopInit": true,
+        "prefer-arrow-callback": [
+            "error",
+            {
+                "allowNamedFunctions": true
+            }
+        ]
     }
 }
