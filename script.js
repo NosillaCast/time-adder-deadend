@@ -48,14 +48,14 @@ $(() => {
   */
 
   class TimeInputRow {
-  // define the constructor
+    // define the constructor
     constructor(details) {
       // define the instance variables - divs for the 3 time inputs and 2 buttons
       this.formRow = details.formRow;
       this.hours = details.hours;
       this.min = details.min;
       this.sec = details.sec;
-      this.addBtn = details.addBt;
+      this.addBtn = details.addBtn;
       this.subBtn = details.subBtn;
       // call the instance function to render the row
       this.putInputTimeRowUp();
